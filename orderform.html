@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bob's Auto Parts - Order Form</title>
+</head>
+<body>
+    <!--
+        * <form> 설명
+            action: 고객의 주문을 처리할 PHP 스크립트 이름을 지정 (processorder.php)
+                    일반적으로 action 속성의 값은 URL
+                    사용자가 Submit 버튼을 클릭할 때 스크립트가 로드되어 실행
+                    
+            method: 사용자가 폼에 입력한 데이터는 method 속성에 지정된 HTTP 메서드를 통해 URL로 전송
+                    "get": URL 끝에 데이터가 추가
+                    "post": 별도의 메시지로 전송
+            
+            name: 폼 필드(field)의 이름 [ex] tireqty, oilqty, sparkqty
+                  PHP 스크립트에서도 이 이름을 사용함
+                  의미 있는 이름을 부여하는 것이 중요함 (데이터의 의미를 반영하는 이름을 부여)
+                  사이트 전체의 모든 필드 이름이 동일한 형식을 사용하도록 필드 이름의 코딩 표준을 만들고 적용
+                    [ex]단어를 줄인 약칭 사용, 단어 사이에 공백 대신 밑줄(_) 사용
+            
+    -->
+    <form action="processorder.php" method="POST">
+        <table style="border: 0px;">
+            <tr style="background: #cccccc;">
+                <td style="width: 150px; text-align: center;">Item</td>
+                <td style="width: 15px; text-align: center;">Quantity</td>
+            </tr>
+            <tr>
+                <td>Tires</td>
+                <td><input type="text" name="tireqty" size="3" maxlength="3" /></td>
+            </tr>
+            <tr>
+                <td>Oil</td>
+                <td><input type="text" name="oilqty" size="3" maxlength="3" /></td>
+            </tr>
+            <tr>
+                <td>Spark Plugs</td>
+                <td><input type="text" name="sparkqty" size="3" maxlength="3" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><input type="submit" value="Submit Order" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
